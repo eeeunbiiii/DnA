@@ -51,11 +51,6 @@
 	}
 	
 	diaryAnswer = "answer";
-<<<<<<< HEAD
-	
-	
-=======
->>>>>>> 571dddc614ac8e4d9964e8c4ceecc92b83776478
 
 	int result = diaryDAO.diarySubmit(userID, diaryDate, diaryTitle, diaryContent, diaryMood, diaryAnswer);
 	
