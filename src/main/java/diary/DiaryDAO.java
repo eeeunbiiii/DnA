@@ -8,7 +8,7 @@ import util.DatabaseUtil;
 public class DiaryDAO{
 	
 	public int diarySubmit(String userID, int date, String title, String content, String mood, String answer) {
-		String SQL = "INSERT INTO DIARY VALUES(?,?,?,?,?,?)";
+		String SQL = "INSERT INTO DIARY(userID, date, title, content, mood, answer) VALUES(?,?,?,?,?,?)";
 		try {
 			Connection conn = DatabaseUtil.getConnection();
 			PreparedStatement pstmt = conn.prepareStatement(SQL);

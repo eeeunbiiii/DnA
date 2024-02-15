@@ -2,6 +2,8 @@ package diary;
 
 
 public class DiaryDTO{
+	
+	int ID;
 	String userID;
 	int date;
 	String title;
@@ -9,6 +11,13 @@ public class DiaryDTO{
 	String mood;
 	String answer;
 	String image;
+	
+	public int getID() {
+		return ID;
+	}
+	public void setID(int ID) {
+		this.ID = ID;
+	}
 	
 	public String getUserID() {
 		return userID;
