@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.util.ArrayList"%>
+<%@ page import="diary.DiaryDAO"%>
+<%@ page import="diary.DiaryDTO"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,7 +15,7 @@
 <body>
 	
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand" href="index.jsp">DnA sample index</a>
+		<a class="navbar-brand" href="index.jsp"><strong>DnA sample index</strong></a>
 		<button class = "navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
@@ -36,8 +39,35 @@
 		</div>
 	</nav>
 	
+	<div class="container mt-5">
+		<h3>Diary List</h3>
+		<table class="table">
+			<thead>
+				<tr>
+					<th scope="col">Title</th>
+					<th scope="col">Date</th>
+					<th scope="col">Mood</th>
+				</tr>
+			</thead>
+			<tbody>
+				<%
+				DiaryDAO diaryDAO = new DiaryDAO();
+				ArrayList<DiaryDTO> diaryList = diaryDAO.getList();
+
+				for (DiaryDTO diary : diaryList) {
+				%>
+				<tr>
+					<td><a href="diaryView.jsp?diaryID=<%=diary.getDiaryID()%>"><%=diary.getTitle()%></a></td>
+					<td><%=diary.getDate()%></td>
+					<td><%=diary.getMood()%></td>
+				</tr>
+				<%
+				}
+				%>
+			</tbody>
+		</table>
+	</div>
 	
-	<h1>일기 써라!!!!!!!!</h1>
 	<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#reportModal">일기 쓰기</button>
 	<div class="modal fade" id="reportModal" tabindex="-1" role="dialog" aria-labelledby="modal" aria-hidden="true">
 		<div class="modal-dialog">

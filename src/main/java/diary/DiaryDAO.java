@@ -2,26 +2,67 @@ package diary;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
 
 import util.DatabaseUtil;
 
-public class DiaryDAO{
+public class DiaryDAO {
 	
-	public int diarySubmit(String userID, int date, String title, String content, String mood, String answer) {
-		String SQL = "INSERT INTO DIARY VALUES(?,?,?,?,?,?)";
-		try {
-			Connection conn = DatabaseUtil.getConnection();
-			PreparedStatement pstmt = conn.prepareStatement(SQL);
-			pstmt.setString(1, userID);
-			pstmt.setInt(2, date);
-			pstmt.setString(3, title);
-			pstmt.setString(4, content);
-			pstmt.setString(5, mood);
-			pstmt.setString(6, answer);
-			return pstmt.executeUpdate();
-		} catch(Exception e) {
-			e.printStackTrace();
-		}
-		return -1;
+	public int diarySubmit(DiaryDTO diary) {
+	    String sql = "INSERT INTO diary (userID, date, title, content, mood, answer) VALUES (?, ?, ?, ?, ?, ?)";
+	    Connection conn = null;
+	    PreparedStatement pstmt = null;
+	    try {
+	        conn = DatabaseUtil.getConnection();
+	        pstmt = conn.prepareStatement(sql);
+	        pstmt.setString(1, diary.getUserID());
+	        pstmt.setInt(2, diary.getDate());
+	        pstmt.setString(3, diary.getTitle());
+	        pstmt.setString(4, diary.getContent());
+	        pstmt.setString(5, diary.getMood());
+	        pstmt.setString(6, diary.getAnswer());
+	        return pstmt.executeUpdate();
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        return -1; //데이터베이스 오류
+	    } finally {
+	        DatabaseUtil.close(conn, pstmt, null);
+	    }
 	}
+	
+	public ArrayList<DiaryDTO> getList() {
+	    ArrayList<DiaryDTO> diaryList = new ArrayList<DiaryDTO>();
+	    Connection conn = null;
+	    PreparedStatement pstmt = null;
+	    ResultSet rs = null;
+
+	    try {
+	        conn = DatabaseUtil.getConnection();
+	        String sql = "SELECT * FROM diary"; // 테이블명 수정
+	        pstmt = conn.prepareStatement(sql);
+	        rs = pstmt.executeQuery();
+
+	        while(rs.next()) {
+	            //일기 정보를 가져와서 DTO에 담기
+	            String userID = rs.getString("userID");
+	            int diaryDate = rs.getInt("date");
+	            String diaryTitle = rs.getString("title");
+	            String diaryContent = rs.getString("content");
+	            String diaryMood = rs.getString("mood");
+	            String diaryAnswer = rs.getString("answer");
+
+	            //DTO 객체 생성하여 리스트에 추가
+	            DiaryDTO diary = new DiaryDTO(userID, diaryDate, diaryTitle, diaryContent, diaryMood, diaryAnswer);
+	            diaryList.add(diary);
+	        }
+	    } catch(Exception e) {
+	        e.printStackTrace();
+	    } finally {
+	        DatabaseUtil.close(conn, pstmt, rs);
+	    }
+
+	    return diaryList;
+	}
+
 }
