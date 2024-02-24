@@ -15,7 +15,7 @@
 <body>
 	
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand" href="index.jsp"><strong>DnA sample index</strong></a>
+		<a class="navbar-brand" href="index.jsp"><strong>DnA</strong></a>
 		<button class = "navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
@@ -31,7 +31,6 @@
 					</a>
 					<ul class="dropdown-menu">
 						<li><a class="dropdown-item" href="write.jsp">오늘의 일기 쓰기</a></li>
-						<li><a class="dropdown-item" href="#">Another action</a></li>
 					</ul>
 				</li>
 			</ul>
