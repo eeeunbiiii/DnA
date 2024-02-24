@@ -8,9 +8,9 @@ import java.sql.ResultSet;
 public class DatabaseUtil {
     public static Connection getConnection() {
         try {
-            String dbURL = "jdbc:mysql://localhost:3306/DiaryDNA";
+            String dbURL = "jdbc:mysql://localhost:3306/MYDIARY";
             String dbID = "root";
-            String dbPassword = "root";
+            String dbPassword = "admin";
             
             Class.forName("com.mysql.cj.jdbc.Driver");
             return DriverManager.getConnection(dbURL, dbID, dbPassword);

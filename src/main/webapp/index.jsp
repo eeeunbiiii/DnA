@@ -11,7 +11,7 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DnA sample</title>
+<title>DnA</title>
 <link rel="stylesheet" href="./css/bootstrap.min.css">
 <link rel="stylesheet" href="./css/custom.css">
 <style>
@@ -37,7 +37,7 @@
 <body>
 
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand" href="index.jsp"><strong>DnA sample index</strong></a>
+		<a class="navbar-brand" href="index.jsp"><strong>DnA</strong></a>
 		<button class="navbar-toggler" type="button"
 			data-bs-toggle="offcanvas" data-bs-target="#navbarSupportedContent"
 			aria-controls="navbarSupportedContent" aria-label="Toggle navigation">
@@ -53,7 +53,6 @@
 					data-bs-toggle="dropdown" aria-expanded="false"> Diary </a>
 					<ul class="dropdown-menu">
 						<li><a class="dropdown-item" href="write.jsp">오늘의 일기 쓰기</a></li>
-						<li><a class="dropdown-item" href="#">Another action</a></li>
 					</ul>
 				</li>
 			</ul>
