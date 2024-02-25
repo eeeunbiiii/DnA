@@ -94,7 +94,7 @@
 									<input type="hidden" name="diaryMood" value="기쁨">
     							</div>
     							<div class="col">
-									<button type="button" id="moodButton2" name="diaryMood" class="form-control moodButton" value="슬품">슬픔</button> 
+									<button type="button" id="moodButton2" name="diaryMood" class="form-control moodButton" value="슬픔">슬픔</button> 
     								<input type="hidden" name="diaryMood" value="슬픔">
     							</div>
 							</div>
