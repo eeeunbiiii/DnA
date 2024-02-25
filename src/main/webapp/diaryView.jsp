@@ -40,10 +40,10 @@
 		<%
 		int diaryID = Integer.parseInt(request.getParameter("diaryID"));
 		DiaryDAO diaryDAO = new DiaryDAO();
-	    ArrayList<DiaryDTO> diaries = diaryDAO.getList();
+		DiaryDTO diary = diaryDAO.getDiary(diaryID);
 
-	    for (DiaryDTO diary : diaries) {
-	%>
+		if (diary != null) {
+		%>
 		<h2><%=diary.getTitle()%></h2>
 		<p>
 			Date:
@@ -52,6 +52,11 @@
 			Mood:
 			<%=diary.getMood()%></p>
 		<p><%=diary.getContent()%></p>
+		<%
+		} else {
+		out.println("<p>해당 일기를 찾을 수 없습니다.</p>");
+		}
+		%>
 	</div>
 	<div class="container mt-5">
 		<h2>Teacher's Response</h2>
@@ -81,6 +86,8 @@
 				teacherResponse = "슬픔을 영어로 표현해보세요. 새로운 표현을 배우면서 마음이 조금 나아질 거예요.";
 				break;
 			}
+		} else {
+			out.println("<p>해당 일기를 찾을 수 없습니다.</p>");
 		}
 
 		String[] words = diary.getContent().split("\\s+");
@@ -91,14 +98,11 @@
 		<p><%=teacherResponse%></p>
 	</div>
 
+
+
+
 	<script src="./js/jquery.min.js"></script>
 	<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
 	<script src="./js/bootstrap.min.js"></script>
-</body>
-</html>
-
-<script src="./js/jquery.min.js"></script>
-<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
-<script src="./js/bootstrap.min.js"></script>
 </body>
 </html>
