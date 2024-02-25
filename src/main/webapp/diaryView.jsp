@@ -64,25 +64,25 @@
 		String teacherResponse = "";
 		if (diary.getMood().equals("기쁨")) {
 			switch (diary.getTeacher()) {
-			case "상냥한 국어 선생님":
+			case "국어":
 				teacherResponse = "오늘 기분이 좋으니, 국어 공부도 잘 될 것 같아요!";
 				break;
-			case "냉철한 수학 선생님":
+			case "수학":
 				teacherResponse = "기분이 좋은 날에는 복잡한 수학 문제도 쉽게 풀 수 있어요!";
 				break;
-			case "이상한 영어 선생님":
+			case "영어":
 				teacherResponse = "기분이 좋으니, 영어 단어를 많이 외워봐요!";
 				break;
 			}
 		} else if (diary.getMood().equals("슬픔")) {
 			switch (diary.getTeacher()) {
-			case "상냥한 국어 선생님":
+			case "국어":
 				teacherResponse = "슬픔도 국어로 표현해보세요. 글로 표현하면 마음이 조금 나아질 거예요.";
 				break;
-			case "냉철한 수학 선생님":
+			case "수학":
 				teacherResponse = "슬픔을 잊기 위해 수학 문제를 풀어보세요. 집중하면 마음이 조금 나아질 거예요.";
 				break;
-			case "이상한 영어 선생님":
+			case "영어":
 				teacherResponse = "슬픔을 영어로 표현해보세요. 새로운 표현을 배우면서 마음이 조금 나아질 거예요.";
 				break;
 			}
