@@ -8,14 +8,14 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>DnA sample</title>
+<title>DnA_sample</title>
 <link rel="stylesheet" href="./css/bootstrap.min.css">
 <link rel="stylesheet" href="./css/custom.css">
 </head>
 <body>
 	
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand" href="index.jsp"><strong>DnA sample index</strong></a>
+		<a class="navbar-brand" href="index.jsp"><strong>DnA_sample</strong></a>
 		<button class = "navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
@@ -40,10 +40,11 @@
 	</nav>
 	
 	<div class="container mt-5">
-		<h3>Diary List</h3>
+		<h3><strong>Diary List</strong></h3>
 		<table class="table">
 			<thead>
 				<tr>
+				    <th scope="col">DiaryID</th>
 					<th scope="col">Title</th>
 					<th scope="col">Date</th>
 					<th scope="col">Mood</th>
@@ -57,6 +58,7 @@
 				for (DiaryDTO diary : diaryList) {
 				%>
 				<tr>
+					<td><%=diary.getDiaryID()%></td>
 					<td><a href="diaryView.jsp?diaryID=<%=diary.getDiaryID()%>"><%=diary.getTitle()%></a></td>
 					<td><%=diary.getDate()%></td>
 					<td><%=diary.getMood()%></td>
