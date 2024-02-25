@@ -19,7 +19,7 @@ String diaryTitle = request.getParameter("diaryTitle");
 String diaryContent = request.getParameter("diaryContent");
 String diaryMood = request.getParameter("diaryMood");
 String diaryAnswer = request.getParameter("diaryAnswer");
-String diaryTeacher = request.getParameter("teacher");
+String diaryTeacher = request.getParameter("diaryTeacher");
 
 //입력값이 null이거나 빈 문자열인 경우 오류 메시지 출력
 if(diaryTitle == null || diaryContent == null || diaryMood == null || diaryTitle.trim().equals("") || diaryContent.trim().equals("") || diaryMood.trim().equals("")) {
