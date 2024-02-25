@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ page import="diary.DiaryDAO"%>
 <%@ page import="diary.DiaryDTO"%>
-<%@ page import="java.util.ArrayList" %>
+<%@ page import="java.util.ArrayList"%>
 
 <!DOCTYPE html>
 <html>
@@ -71,7 +71,7 @@
 			<%-- Teacher's response for the current diary --%>
 			<%
 			String teacherResponse = "";
-			if (diaryDetails.getMood().equals("기쁨")) {
+			if (diaryDetails.getMood()!=null && diaryDetails.getMood().equals("기쁨")) {
 				switch (diaryDetails.getTeacher()) {
 				case "국어":
 					teacherResponse = "오늘 기분이 좋으니, 국어 공부도 잘 될 것 같아요!";
@@ -83,7 +83,7 @@
 					teacherResponse = "기분이 좋으니, 영어 단어를 많이 외워봐요!";
 					break;
 				}
-			} else if (diaryDetails.getMood().equals("슬픔")) {
+			} else if (diaryDetails.getMood()!=null && diaryDetails.getMood().equals("슬픔")) {
 				switch (diaryDetails.getTeacher()) {
 				case "국어":
 					teacherResponse = "슬픔도 국어로 표현해보세요. 글로 표현하면 마음이 조금 나아질 거예요.";
