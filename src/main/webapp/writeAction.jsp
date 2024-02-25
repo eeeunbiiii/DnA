@@ -18,6 +18,8 @@ int diaryDate = Integer.parseInt(dateFormat.format(now));
 String diaryTitle = request.getParameter("diaryTitle");
 String diaryContent = request.getParameter("diaryContent");
 String diaryMood = request.getParameter("diaryMood");
+String diaryAnswer = request.getParameter("diaryAnswer");
+String diaryTeacher = request.getParameter("teacher");
 
 //입력값이 null이거나 빈 문자열인 경우 오류 메시지 출력
 if(diaryTitle == null || diaryContent == null || diaryMood == null || diaryTitle.trim().equals("") || diaryContent.trim().equals("") || diaryMood.trim().equals("")) {
@@ -30,9 +32,9 @@ if(diaryTitle == null || diaryContent == null || diaryMood == null || diaryTitle
     return;
 }
 
-String diaryAnswer = "answer";
 
-DiaryDTO diary = new DiaryDTO(userID, diaryDate, diaryTitle, diaryContent, diaryMood, diaryAnswer);
+
+DiaryDTO diary = new DiaryDTO(userID, diaryDate, diaryTitle, diaryContent, diaryMood, diaryAnswer, diaryTeacher); // 수정된 코드
 int result = diaryDAO.diarySubmit(diary);
 
 if(result == -1) {
