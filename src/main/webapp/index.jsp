@@ -80,7 +80,7 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
     </button>
-</div>
+</div> 
 
 <!-- 하단 글자 설명 -->
 <h5 class="centered-text"><strong>Diary n Answer!</strong></h5>

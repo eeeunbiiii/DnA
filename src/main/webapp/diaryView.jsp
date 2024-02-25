@@ -12,28 +12,6 @@
 </head>
 <body>
 
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand" href="index.jsp"><strong>DnA</strong></a>
-		<button class="navbar-toggler" type="button"
-			data-bs-toggle="offcanvas" data-bs-target="#navbarSupportedContent"
-			aria-controls="navbarSupportedContent" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-
-		<div class="offcanvas offcanvas-end" id="navbarSupportedContent">
-			<ul class="navbar-nav mr-auto">
-				<li class="nav-item active"><a class="nav-link"
-					href="index.jsp">Home </a></li>
-				<li class="nav-item dropdown"><a
-					class="nav-link dropdown-toggle" href="#" role="button"
-					data-bs-toggle="dropdown" aria-expanded="false"> Diary </a>
-					<ul class="dropdown-menu">
-						<li><a class="dropdown-item" href="write.jsp">오늘의 일기 쓰기</a></li>
-					</ul>
-				</li>
-			</ul>
-		</div>
-	</nav>
     <div class="container mt-5">
         <h1>Diary View</h1>
         <%
@@ -47,6 +25,7 @@
         <p>Date: <%= diary.getDate() %></p>
         <p>Mood: <%= diary.getMood() %></p>
         <p><%= diary.getContent() %></p>
+        <p><%= diary.getAnswer() %></p>
         <%
             } else {
                 out.println("<p>해당 일기를 찾을 수 없습니다.</p>");
