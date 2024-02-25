@@ -108,15 +108,15 @@
 							<p>어떤 선생님께 제출할까요?</p>
 							<div class="form-group row">
     							<div class="col">
-     							   <button type="button" id="teacherButton1" class="teacherButton btn btn-secondary btn-primary" value="상냥한 국어 선생님">상냥한 국어 선생님</button>
+     							   <button type="button" id="teacherButton1" class="teacherButton btn btn-secondary btn-primary" value="국어">상냥한 국어 선생님</button>
     								<input type="hidden" name="diaryTeacher" value="국어">
     							</div>
     							<div class="col">
-     							   <button type="button" id="teacherButton2" class="teacherButton btn btn-secondary btn-primary" value="냉철한 수학 선생님">냉철한 수학 선생님</button>
+     							   <button type="button" id="teacherButton2" class="teacherButton btn btn-secondary btn-primary" value="수학">냉철한 수학 선생님</button>
     								<input type="hidden" name="diaryTeacher" value="수학">
     							</div>
     							<div class="col">
-     							   <button type="button" id="teacherButton3" class="teacherButton btn btn-secondary btn-primary" value="이상한 영어 선생님">이상한 영어 선생님</button>
+     							   <button type="button" id="teacherButton3" class="teacherButton btn btn-secondary btn-primary" value="영어">이상한 영어 선생님</button>
     								<input type="hidden" name="diaryTeacher" value="영어">
     							</div>
 							</div>
