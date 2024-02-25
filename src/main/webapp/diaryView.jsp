@@ -40,10 +40,10 @@
 		<%
 		int diaryID = Integer.parseInt(request.getParameter("diaryID"));
 		DiaryDAO diaryDAO = new DiaryDAO();
-		DiaryDTO diary = diaryDAO.getDiary(diaryID);
+	    ArrayList<DiaryDTO> diaries = diaryDAO.getList();
 
-		if (diary != null) {
-		%>
+	    for (DiaryDTO diary : diaries) {
+	%>
 		<h2><%=diary.getTitle()%></h2>
 		<p>
 			Date:
@@ -52,11 +52,6 @@
 			Mood:
 			<%=diary.getMood()%></p>
 		<p><%=diary.getContent()%></p>
-		<%
-		} else {
-		out.println("<p>해당 일기를 찾을 수 없습니다.</p>");
-		}
-		%>
 	</div>
 	<div class="container mt-5">
 		<h2>Teacher's Response</h2>
