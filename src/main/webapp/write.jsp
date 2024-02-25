@@ -109,12 +109,15 @@
 							<div class="form-group row">
     							<div class="col">
      							   <button type="button" id="teacherButton1" class="teacherButton btn btn-secondary btn-primary" value="상냥한 국어 선생님">상냥한 국어 선생님</button>
+    								<input type="hidden" name="diaryTeacher" value="국어">
     							</div>
     							<div class="col">
      							   <button type="button" id="teacherButton2" class="teacherButton btn btn-secondary btn-primary" value="냉철한 수학 선생님">냉철한 수학 선생님</button>
+    								<input type="hidden" name="diaryTeacher" value="수학">
     							</div>
     							<div class="col">
      							   <button type="button" id="teacherButton3" class="teacherButton btn btn-secondary btn-primary" value="이상한 영어 선생님">이상한 영어 선생님</button>
+    								<input type="hidden" name="diaryTeacher" value="영어">
     							</div>
 							</div>
 
@@ -151,6 +154,8 @@
 	        event.preventDefault(); 
 	        $(".teacherButton").removeClass("btn-primary"); 
 	        $(this).addClass("btn-primary"); 
+	        var diaryTeacher = $(this).val();
+	        $("input[name='diaryTeacher']").val(diaryTeacher);
 	        
 	        $(".teacherButton").css("background-color", ""); 
 	        $(".teacherButton").css("color", ""); 
