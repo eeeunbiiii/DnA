@@ -8,7 +8,7 @@ import java.sql.ResultSet;
 public class DatabaseUtil {
     public static Connection getConnection() {
         try {
-            String dbURL = "jdbc:mysql://localhost:3306/MYDIARY";
+            String dbURL = "jdbc:mysql://localhost:3306/mydiary";
             String dbID = "root";
             String dbPassword = "admin";
             
